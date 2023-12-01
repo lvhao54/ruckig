@@ -11,12 +11,13 @@ if __name__ == "__main__":
 
     inp.control_interface = ControlInterface.Velocity
 
-    inp.current_velocity = [1.0]
-    inp.target_velocity = [0.0]
-
-    inp.target_acceleration = [-1]
-    inp.max_acceleration = [2]
-    inp.max_jerk = [4]
+    inp.current_velocity = [0.0]
+    
+    inp.target_velocity = [5]
+    inp.target_acceleration = [inp.target_velocity[0] * 2]
+    
+    inp.max_acceleration = [inp.target_velocity[0] * 2]
+    inp.max_jerk = [inp.target_velocity[0] * 4]
 
     print("\t".join(["t"] + [str(i) for i in range(otg.degrees_of_freedom)]))
 
